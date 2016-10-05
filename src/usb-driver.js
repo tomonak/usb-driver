@@ -31,6 +31,10 @@ USBDriver.prototype.getAll = function() {
   });
 };
 
+USBDriver.prototype.getAllSync = function() {
+  return USBNativeDriver.getDevices();
+};
+
 USBDriver.prototype.get = function(id) {
   return new Promise(function(resolve, reject) {
     resolve(USBNativeDriver.getDevice(id));
