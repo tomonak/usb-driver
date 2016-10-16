@@ -185,6 +185,9 @@ GetDevices(void)
     }
     all_devices.clear();
 
+    // always clear device drives cache
+    device_drives_cache.clear();
+
     const GUID *guid = &GUID_DEVINTERFACE_DISK;
     HDEVINFO device_info = SetupDiGetClassDevs(guid, NULL, NULL,
 	    (DIGCF_PRESENT | DIGCF_DEVICEINTERFACE));
